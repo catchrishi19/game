@@ -256,15 +256,36 @@
                         </configuration>
                     </plugin>
 
-                    <!-- FINDBUGS -->
+                    <!-- FINDBUGS -->  
+      <!-- SpotBugs Static Analysis -->
+        <plugin>
+            <groupId>com.github.spotbugs</groupId>
+            <artifactId>spotbugs-maven-plugin</artifactId>
+            <version>3.1.1</version>
+            <configuration>
+                <effort>Max</effort>
+                <threshold>Low</threshold>
+                <xmlOutput>true</xmlOutput>
+                <failOnError>true</failOnError>
+                <includeFilterFile>${session.executionRootDirectory}/spotbugs-security-include.xml</includeFilterFile>
+                <excludeFilterFile>${session.executionRootDirectory}/spotbugs-security-exclude.xml</excludeFilterFile>
+                <plugins>
                     <plugin>
+                        <groupId>com.h3xstream.findsecbugs</groupId>
+                        <artifactId>findsecbugs-plugin</artifactId>
+                        <version>LATEST</version> <!-- Auto-update to the latest stable -->
+                    </plugin>
+                </plugins>
+            </configuration>
+        </plugin>
+                    <!--  <plugin>
                         <artifactId>findbugs-maven-plugin</artifactId>
                         <version>2.4.0</version>
                         <configuration>
                             <effort>Max</effort>
                             <xmlOutput>true</xmlOutput>
                         </configuration>
-                    </plugin>
+                    </plugin> -->
                 </plugins>
             </build>
         </profile>
@@ -456,7 +477,9 @@
                             <configLocation>gameoflife-build/checkstyle.xml</configLocation>
                         </configuration>
                     </plugin>
-                    <plugin>
+                   
+                    
+                  <!--  <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>findbugs-maven-plugin</artifactId>
                         <version>2.4.0</version>
@@ -464,7 +487,9 @@
                             <effort>Max</effort>
                             <xmlOutput>true</xmlOutput>
                         </configuration>
-                    </plugin>
+                    </plugin>  -->
+
+
                     <plugin>
                         <artifactId>maven-javadoc-plugin</artifactId>
                         <version>2.7</version>

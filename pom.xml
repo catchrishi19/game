@@ -82,7 +82,7 @@
         <plugin>
             <groupId>org.jacoco</groupId>
             <artifactId>jacoco-maven-plugin</artifactId>
-            <version>0.6.2.201302030002</version>
+            <version>0.8.0</version>
             <executions>
                 <execution>
                     <goals>
@@ -98,7 +98,7 @@
         </plugin>
         <plugin>
             <groupId>org.apache.tomcat.maven</groupId>
-            <artifactId>tomcat7-maven-plugin</artifactId>
+            <artifactId>tomcat8-maven-plugin</artifactId>
             <version>2.1</version>
             <executions>
                 <execution>
